@@ -1,0 +1,36 @@
+textarea{
+    resize: none;
+}
+
+.data-input{
+    height: 7em;
+    width: 470px;
+
+}
+.nonce-output, .hash-output, .previous-hash-output, .assinatura-input{
+    height: 1.3em;
+    width: 470px;
+}
+
+.text{
+    background: transparent;
+    border: transparent;
+    outline: none;
+    height: 1.3em;
+    width: 90px;
+    text-align: right;
+
+    font-weight: bold;
+}
+
+/* .previous-hash-output{
+    background-color: #62915c;
+} */
+
+.bloco{
+    display: inline-block;
+    padding: 5px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+
+}
