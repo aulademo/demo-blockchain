@@ -62,12 +62,15 @@ novo_bloco_btn.addEventListener('click', (e) => {
     const f = document.createDocumentFragment();
     const node = bloco_template.content.cloneNode(true);
 
+    node.querySelector(".title").id = block_id;
     node.querySelector(".bloco").id = block_id;
     node.querySelector(".nonce-output").id = block_id;
     node.querySelector(".data-input").id = block_id;
     node.querySelector(".hash-output").id = block_id;
     node.querySelector(".previous-hash-output").id = block_id;
     node.querySelector(".minerar-btn").id = block_id;
+
+    node.querySelector(".title").value = `Bloco #${block_id}` ;
 
     previous_hash = document.querySelector(`#${CSS.escape(previous_bloco_id)} .hash-output`).value;
     node.querySelector(".previous-hash-output").value = previous_hash;

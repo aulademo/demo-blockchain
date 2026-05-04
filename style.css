@@ -17,10 +17,24 @@ textarea{
     border: transparent;
     outline: none;
     height: 1.3em;
-    width: 90px;
+    width: 60px;
     text-align: right;
 
     font-weight: bold;
+}
+
+.title{
+    background-color: rgb(199, 198, 198);
+    border-radius: 5px;
+    padding: 5px;
+    border: transparent;
+    outline: none;
+    height: 1.3em;
+    width: 90px;
+
+    width: 98%;
+    font-weight: bolder;
+    color:black;
 }
 
 /* .previous-hash-output{
