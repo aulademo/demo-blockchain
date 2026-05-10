@@ -1,0 +1,70 @@
+html{
+    width: 100%;
+}
+
+textarea{
+    resize: none;
+    overflow: hidden;
+}
+
+.blockchain-container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.data-input{
+    height: 7em;
+    width: 270px;
+
+}
+.nonce-output, .hash-output, .previous-hash-output, .assinatura-input{
+    height: 1.2em;
+    width: 270px;
+}
+
+.text{
+    background: transparent;
+    border: transparent;
+    outline: none;
+    height: 1.3em;
+    width: 60px;
+    text-align: right;
+
+    font-weight: bold;
+}
+
+.title{
+    background-color: rgb(199, 198, 198);
+    border-radius: 5px;
+    padding: 5px;
+    border: transparent;
+    outline: none;
+    height: 1.3em;
+
+    width: 97%;
+    font-weight: bolder;
+    color:black;
+}
+
+/* .previous-hash-output{
+    background-color: #62915c;
+} */
+
+.bloco{
+    display: inline-block;
+    padding: 5px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+
+}
+
+[data-broken="0"]{
+    padding: 15px;
+}
+
+[data-broken="1"]{
+    background-color: rgb(255, 227, 227);
+    border-radius: 5px;
+    padding: 15px;;
+}

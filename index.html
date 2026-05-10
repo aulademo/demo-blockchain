@@ -8,45 +8,50 @@
 </head>
 <body>
 
-    <template id="bloco-template">
+    <div>
+        <template id="bloco-template">
+            <div class="bloco">
+                <textarea disabled class="title"></textarea>
+                <br>
+                <textarea disabled class="text">nonce</textarea><textarea class="nonce-output" disabled>0</textarea>
+                <br>
+                <textarea disabled class="text">dados</textarea><textarea class="data-input"></textarea>
+                <br>
+                <textarea disabled class="text">prévio</textarea><textarea disabled class="previous-hash-output">?</textarea>
+                <br>
+                <textarea disabled class="text">hash</textarea><textarea disabled class="hash-output"></textarea>
+                <br>
+                <textarea disabled class="text"></textarea><button class="minerar-btn">minerar</button>
+            </div>
+        </template>
+
+
         <div class="bloco">
-            <textarea disabled class="title"></textarea>
-            <br>
-            <textarea disabled class="text">nonce</textarea><textarea class="nonce-output" disabled>0</textarea>
-            <br>
-            <textarea disabled class="text">dados</textarea><textarea class="data-input"></textarea>
-            <br>
-            <textarea disabled class="text">prévio</textarea><textarea disabled class="previous-hash-output">?</textarea>
-            <br>
-            <textarea disabled class="text">hash</textarea><textarea disabled class="hash-output"></textarea>
-            <br>
-            <textarea disabled class="text"></textarea><button class="minerar-btn">minerar</button>
+            <textarea id="assinatura-input">1234</textarea>
         </div>
-    </template>
+        <br><br><br>
 
+        <div class="bloco" id="1">
+            <textarea disabled class="title">Bloco #1</textarea>
+            <br>
+            <textarea disabled class="text">nonce</textarea><textarea class="nonce-output" id="1"disabled>0</textarea>
+            <br>
+            <textarea disabled class="text">dados</textarea><textarea class="data-input" id="1"></textarea>
+            <br>
+            <textarea disabled class="text">prévio</textarea><textarea disabled class="previous-hash-output" id="1">?</textarea>
+            <br>
+            <textarea disabled class="text">hash</textarea><textarea disabled class="hash-output" id="1"></textarea>
+            <br>
+            <textarea disabled class="text"></textarea><button class="minerar-btn" id="1">minerar</button>
+        </div>
 
-    <div class="bloco">
-        <textarea id="assinatura-input">1234</textarea>
+        <br><br> 
+
+        <button id="novo-bloco-btn">novo bloco</button>
     </div>
-    <br><br><br>
 
-    <div class="bloco" id="1">
-        <textarea disabled class="title">Bloco #1</textarea>
-        <br>
-        <textarea disabled class="text">nonce</textarea><textarea class="nonce-output" id="1"disabled>0</textarea>
-        <br>
-        <textarea disabled class="text">dados</textarea><textarea class="data-input" id="1"></textarea>
-        <br>
-        <textarea disabled class="text">prévio</textarea><textarea disabled class="previous-hash-output" id="1">?</textarea>
-        <br>
-        <textarea disabled class="text">hash</textarea><textarea disabled class="hash-output" id="1"></textarea>
-        <br>
-        <textarea disabled class="text"></textarea><button class="minerar-btn" id="1">minerar</button>
-    </div>
 
-    <br><br> 
-
-    <button id="novo-bloco-btn">novo bloco</button>
+    <a href="blockchain_rede/main.html">Ver rede de blockchain</a>
     <script src="main.js"></script>
 </body>
 </html>
