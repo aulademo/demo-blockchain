@@ -2,6 +2,9 @@ const bloco_template = document.getElementById("bloco-template");
 const minerar_btn = document.querySelectorAll(".minerar-btn");
 const novo_bloco_btn = document.getElementById("novo-bloco-btn");
 
+const auto_sync = document.getElementById("globalsync");
+
+
 const assinatura = "0000";
 
 
@@ -92,6 +95,11 @@ worker.onmessage = e => {
     let result = check_chain(current_node);
     document.getElementById(`${current_node}node`).dataset.broken = result[0];
     document.getElementById(`${current_node}node`).dataset.fullblocks = result[1];
+
+
+    if (auto_sync.checked){
+        for (const node_letter of "abc")update_chain(node_letter);
+    }
 };
 
 
@@ -123,6 +131,29 @@ function new_block(block_ltr, block_num){
     return f;
 }
 
+
+function update_chain(node_letter){
+    const maior = Array.from( document.querySelectorAll("[data-fullblocks]") ).reduce((p, c) => {
+        return (parseInt(c.dataset.fullblocks) > parseInt(p.dataset.fullblocks) ? c : p);
+    });
+    
+    if (maior.id[0] != node_letter){
+        let qtd_maior = parseInt(maior.dataset.fullblocks);
+        let qtd_poss_menor = parseInt(document.getElementById(`${node_letter}node`).dataset.blocks);
+        let diff = qtd_maior-qtd_poss_menor
+        
+        let b = document.querySelector(`#novo-bloco-btn[data-row="${node_letter}"]`);
+        let block_num = parseInt(b.dataset.col);
+        for (let i = 0; i < diff; i++){
+
+            b.setAttribute('data-col', block_num+1);
+            b.before(new_block(node_letter, block_num++));
+            document.getElementById(`${node_letter}node`).dataset.blocks = parseInt(document.getElementById(`${node_letter}node`).dataset.blocks)+1;
+        }
+
+        copy_chain(maior.id[0], node_letter, qtd_maior);
+    }
+}
 
 document.querySelectorAll("#novo-bloco-btn").forEach(b => {
     b.addEventListener('click', (e) => {
