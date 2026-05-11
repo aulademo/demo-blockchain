@@ -97,8 +97,10 @@ worker.onmessage = e => {
     document.getElementById(`${current_node}node`).dataset.fullblocks = result[1];
 
 
-    if (auto_sync.checked){
-        for (const node_letter of "abc")update_chain(node_letter);
+    if (auto_sync.checked && result[0] == 0){
+        for (const node of "abc") {
+            if (node != current_node) update_chain(node);
+        }
     }
 };
 
@@ -133,6 +135,8 @@ function new_block(block_ltr, block_num){
 
 
 function update_chain(node_letter){
+    console.log(node_letter);
+
     const maior = Array.from( document.querySelectorAll("[data-fullblocks]") ).reduce((p, c) => {
         return (parseInt(c.dataset.fullblocks) > parseInt(p.dataset.fullblocks) ? c : p);
     });
